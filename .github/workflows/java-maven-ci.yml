@@ -24,10 +24,12 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Build, Test, and Verify with Maven
-        run: mvn -B verify
+      # --- CHANGE #1: ADD jacoco:report-aggregate TO THE MAVEN COMMAND ---
+      - name: Build, Test, Verify, and Generate Aggregate Coverage Report
+        run: mvn -B verify jacoco:report-aggregate # Added report goal
 
       - name: Check for jacoco.exec files AFTER verify
+        # This step helps debug if verify fails before report generation
         if: failure()
         run: |
           echo "--- Checking for jacoco.exec files ---"
@@ -43,11 +45,12 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
 
+      # --- CHANGE #2: CORRECT THE PATH (REMOVE LEADING /) ---
       - name: Upload Code Coverage Report (Jacoco Aggregate)
-        if: success()
+        if: success() # Only run if the build and report generation succeed
         uses: actions/upload-artifact@v4
         with:
-          name: jacoco-code-coverage-report 
-          path: /target/site/jacoco-aggregate/
-          if-no-files-found: error
+          name: jacoco-code-coverage-report
+          path: target/site/jacoco-aggregate/ # Corrected relative path
+          if-no-files-found: error # Fail if the report wasn't generated
           retention-days: 7
