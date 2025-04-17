@@ -1,0 +1,12 @@
+lapr4.shodrone.infrastructure.persistence
+lapr4.shodrone.myutente.application
+lapr4.shodrone.usermanagement
+lapr4.shodrone.usermanagement.application
+lapr4.shodrone.usermanagement.application.eventhandlers
+lapr4.shodrone.usermanagement.domain
+lapr4.shodrone.utentemanagement
+lapr4.shodrone.utentemanagement.application
+lapr4.shodrone.utentemanagement.application.eventhandlers
+lapr4.shodrone.utentemanagement.domain
+lapr4.shodrone.utentemanagement.domain.events
+lapr4.shodrone.utentemanagement.repositories

@@ -1,0 +1,11 @@
+lapr4\shodrone\persistence\impl\inmemory\InMemoryUtenteRepository.class
+lapr4\shodrone\persistence\impl\jpa\JpaSignupRequestRepository.class
+lapr4\shodrone\persistence\impl\inmemory\InMemorySignupRequestRepository.class
+lapr4\shodrone\persistence\impl\jpa\JpaClientUserRepository.class
+lapr4\shodrone\persistence\impl\jpa\JpaRepositoryFactory.class
+lapr4\shodrone\persistence\impl\inmemory\InMemoryInitializer$LazyHolder.class
+lapr4\shodrone\persistence\impl\inmemory\InMemoryInitializer.class
+lapr4\shodrone\persistence\impl\jpa\ExemploJpaReportingRepositoryBase.class
+lapr4\shodrone\persistence\impl\inmemory\InMemoryRepositoryFactory.class
+lapr4\shodrone\persistence\impl\jpa\BaseJpaRepositoryBase.class
+lapr4\shodrone\persistence\impl\jpa\PersistenceSettings.class

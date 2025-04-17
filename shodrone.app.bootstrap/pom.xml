@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>eapli</groupId>
+        <artifactId>shodrone</artifactId>
+        <relativePath>../pom.xml</relativePath>
+        <version>1.4.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>shodrone.app.bootstrap</artifactId>
+    <packaging>jar</packaging>
+    <name>shodrone.app.bootstrap</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>shodrone.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>shodrone.bootstrappers</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>shodrone.persistence.impl</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>shodrone.app.common.console</artifactId> <!-- Needed for BaseApp -->
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Inherits framework dependencies from parent -->
+    </dependencies>
+</project>

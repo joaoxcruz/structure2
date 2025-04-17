@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>eapli</groupId>
+        <artifactId>shodrone</artifactId>
+        <relativePath>../pom.xml</relativePath>
+        <version>1.4.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>shodrone.app.common.console</artifactId>
+    <packaging>jar</packaging>
+    <name>shodrone.app.common.console</name>
+
+    <properties>
+        <slf4jVersion>1.7.36</slf4jVersion>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>shodrone.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Inherits framework dependencies from parent -->
+        <!-- Add SLF4J dependency if needed directly -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4jVersion}</version> <!-- Manage version here or in parent -->
+        </dependency>
+    </dependencies>
+</project>

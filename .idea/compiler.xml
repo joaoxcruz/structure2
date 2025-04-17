@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for shodrone" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="shodrone.app.customer.console" />
+        <module name="shodrone.app.backoffice.console" />
+        <module name="shodrone.core" />
+        <module name="shodrone.infrastructure.application" />
+        <module name="shodrone.app.bootstrap" />
+        <module name="shodrone.persistence.impl" />
+        <module name="shodrone.bootstrappers" />
+        <module name="shodrone.app.common.console" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

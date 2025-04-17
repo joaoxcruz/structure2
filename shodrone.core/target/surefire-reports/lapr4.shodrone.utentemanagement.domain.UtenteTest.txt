@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: lapr4.shodrone.utentemanagement.domain.UtenteTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.815 s -- in lapr4.shodrone.utentemanagement.domain.UtenteTest

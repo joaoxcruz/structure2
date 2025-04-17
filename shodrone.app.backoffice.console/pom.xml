@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>eapli</groupId>
+        <artifactId>shodrone</artifactId>
+        <relativePath>../pom.xml</relativePath>
+        <version>1.4.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>shodrone.app.backoffice.console</artifactId>
+    <packaging>jar</packaging>
+    <name>shodrone.app.backoffice.console</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>shodrone.app.common.console</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Core dependency already inherited via common.console usually,
+             but explicit doesn't hurt if common doesn't exist/depend on it directly -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>shodrone.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>shodrone.persistence.impl</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope> <!-- IMPORTANT: Implementation needed only at runtime -->
+        </dependency>
+    </dependencies>
+</project>

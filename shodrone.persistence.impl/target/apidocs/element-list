@@ -1,0 +1,2 @@
+lapr4.shodrone.persistence.impl.inmemory
+lapr4.shodrone.persistence.impl.jpa
