@@ -47,7 +47,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: jacoco-code-coverage-report # Use a consistent name
-          path: shodrone-util-ci/target/site/jacoco-aggregate/
+          name: jacoco-code-coverage-report 
+          path: /target/site/jacoco-aggregate/
           if-no-files-found: error
           retention-days: 7
