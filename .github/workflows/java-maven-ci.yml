@@ -1,0 +1,53 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Test Java Components
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 11 and Maven
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build, Test, and Verify with Maven
+        run: mvn -B verify
+
+      - name: Check for jacoco.exec files AFTER verify
+        if: failure()
+        run: |
+          echo "--- Checking for jacoco.exec files ---"
+          find . -path '*/target/jacoco.exec' -ls
+          echo "--- Finished checking ---"
+
+      - name: Upload Unit Test Results (Surefire)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: '**/target/surefire-reports/*.xml'
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Upload Code Coverage Report (Jacoco Aggregate)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-code-coverage-report # Use a consistent name
+          path: shodrone-util-ci/target/site/jacoco-aggregate/
+          if-no-files-found: error
+          retention-days: 7
